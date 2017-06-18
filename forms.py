@@ -8,3 +8,14 @@ class SignupForm(Form):
 	email = StringField('email', validators = [DataRequired("Please enter the Email id"), Email("Please enter valid emailid")])
 	password = PasswordField('password', validators = [DataRequired("Please enter the password"), Length (min=6, message = "Password must be atleast 6 characters")])
 	submit = SubmitField('Sign Up')
+
+
+class LoginForm(Form):
+	email = StringField('email', validators = [DataRequired("Please enter the email id")])
+	password = PasswordField('password', validators = [DataRequired("Please enter the password")])
+	submit = SubmitField ("Sign In")
+
+
+class AddressForm(Form):
+	address = StringField('address', validators = [DataRequired("Please enter the address to search")])
+	submit = SubmitField ("Search")
